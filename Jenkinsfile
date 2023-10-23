@@ -1,9 +1,15 @@
 pipeline {
     agent any
     stages {
-        stage('clone the repository') {
+        stage('Clone the Repo') {
             steps {
-                sh 'git clone https://github.com/Sourav-Malani/Jenkins-Scripting.git' 
+                script {
+                    if (isUnix()) {
+                        sh 'git clone https://github.com/Sourav-Malani/Jenkins-Scripting.git'
+                    } else {
+                        bat 'git clone https://github.com/Sourav-Malani/Jenkins-Scripting.git'
+                    }
+                }
             }
         }
         stage('Install Dependencies') {
