@@ -4,7 +4,7 @@ pipeline {
         stage('Clone the Repo') {
             steps {
                 script {
-                    if (isUnix()) {
+                    if (isUnix()) { // For Linux/Mac
                         sh 'git clone https://github.com/Sourav-Malani/Jenkins-Scripting.git'
                     } else {
                         bat 'git clone https://github.com/Sourav-Malani/Jenkins-Scripting.git'
