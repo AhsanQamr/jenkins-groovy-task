@@ -13,7 +13,7 @@ pipeline {
         echo 'Building'
 
         // Create a Python virtual environment
-        bat 'python -m venv venv'
+        bat 'python3 -m venv venv'
 
         // Activate the virtual environment
         bat '.\\venv\\Scripts\\activate'
