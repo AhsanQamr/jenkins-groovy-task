@@ -4,9 +4,9 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                script {
-                    checkout([$class: 'GitSCM', branches: [[name: 'main']], userRemoteConfigs: [[url: 'https://github.com/Sourav-Malani/Jenkins-Scripting.git']]])
-                }
+                
+                    git branch: 'main', url: 'https://github.com/samishah6799/mlops-demo.git'
+                
             }
         }
 
