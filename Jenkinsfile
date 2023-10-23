@@ -21,7 +21,5 @@ pipeline {
                 sh 'pytest test_person.py'
             }
         }
-        
-
     }
 }
