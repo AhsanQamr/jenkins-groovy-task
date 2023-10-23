@@ -8,17 +8,18 @@ pipeline {
             }
         }
         
-        stage('Build') {
-            steps {
-                echo 'Building'
-                sh 'pip3 install -r requirements.txt'
-            }
+    stage('Build') {
+        steps {
+            echo 'Building'
+            bat 'pip install -r requirements.txt'
         }
+    }
+
         
         stage('Test') {
             steps {
                 echo 'Test'
-                sh 'pytest test_person.py'
+                bat 'pytest test_person.py'
             }
         }
     }
