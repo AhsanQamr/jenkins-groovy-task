@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
+        stage('clone the repo') {
             steps {
-                checkout scm
+                sh 'git clone https://github.com/Sourav-Malani/Jenkins-Scripting.git' 
             }
         }
         stage('Install Dependencies') {
