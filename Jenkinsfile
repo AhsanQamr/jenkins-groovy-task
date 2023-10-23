@@ -1,27 +1,27 @@
 pipeline {
-    agent {
-        label 'linux'
-    }
+    agent any
+
     stages {
-        stage('Clone the Repo') {
+        stage('checkout') {
             steps {
-                sh 'git clone https://github.com/Sourav-Malani/Jenkins-Scripting.git'
+                git branch: 'main', url: 'https://github.com/Sourav-Malani/Jenkins-Scripting.git'
             }
         }
-        stage('Install Dependencies') {
+        
+        stage('Build') {
             steps {
-                sh 'pip install -r requirements.txt'
+                echo 'Building'
+                sh 'pip3 install -r requirements.txt'
             }
         }
-        stage('Run Tests') {
+        
+        stage('Test') {
             steps {
+                echo 'Test'
                 sh 'pytest test_person.py'
             }
         }
-    }
-    post {
-        always {
-            junit '**/test-reports/*.xml'
-        }
+        
+
     }
 }
