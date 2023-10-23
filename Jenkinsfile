@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('clone the repo') {
+        stage('clone the repository') {
             steps {
                 sh 'git clone https://github.com/Sourav-Malani/Jenkins-Scripting.git' 
             }
