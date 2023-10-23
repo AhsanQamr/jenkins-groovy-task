@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 
-                    git branch: 'main', url: 'https://github.com/samishah6799/mlops-demo.git'
+                    git branch: 'main', url: 'https://github.com/Sourav-Malani/Jenkins-Scripting.git'
                 
             }
         }
