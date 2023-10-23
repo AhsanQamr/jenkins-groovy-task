@@ -19,7 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing'
-                bat 'pytest test_person.py'
+                bat 'pytest test_person.py' 
             }
         }
 
