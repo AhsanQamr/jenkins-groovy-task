@@ -14,12 +14,26 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'pip install -r requirements.txt'
+                script {
+                    if (isUnix()) { // For Linux/Mac
+                        sh 'pip install -r requirements.txt'
+                    } else {
+                        bat 'pip install -r requirements.txt'
+                    }
+                }
+
             }
+
         }
         stage('Run Tests') {
             steps {
-                sh 'pytest test_person.py'
+                script {
+                    if (isUnix()) { // For Linux/Mac
+                        sh 'pytest test_person.py'
+                    } else {
+                        bat 'pytest test_person.py'
+                    }
+                }
             }
         }
     }
