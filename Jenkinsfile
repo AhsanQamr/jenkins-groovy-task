@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    stages {
+    stages { 
         stage('Checkout') {
             steps {
                 
@@ -13,13 +13,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building'
-                bat 'pip install -r requirements.txt'
+                sh 'pip install -r requirements.txt'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing'
-                bat 'pytest test_person.py' 
+                sh 'pytest test_person.py' 
             }
         }
 
