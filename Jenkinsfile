@@ -1,25 +1,17 @@
-pipeline {   
-    agent any  
-    stages { 
-        stage('Checkout') {
+pipeline {
+    agent any
+    stages {
+        stage('Build and Test') {
             steps {
                 script {
-                    
-                    git url: 'https://github.com/Sourav-Malani/Jenkins-Scripting.git', branch: 'main' 
-                }
-            }
-        }
+                    // Load the Groovy script
+                    def buildAndTest = load 'main.groovy'
 
-        stage('Building...') {
-            steps {
-                echo 'Building'
-                bat 'pip install -r requirements.txt'
-            }
-        }
-        stage('Testing...') {
-            steps {
-                echo 'Testing'
-                bat 'pytest test_person.py' 
+                    // Call the steps defined in the script
+                    buildAndTest.checkoutStep()
+                    buildAndTest.buildStep()
+                    buildAndTest.testStep()
+                }
             }
         }
     }
