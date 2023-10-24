@@ -10,13 +10,13 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Building...') {
             steps {
                 echo 'Building'
                 bat 'pip install -r requirements.txt'
             }
         }
-        stage('Test') {
+        stage('Testing...') {
             steps {
                 echo 'Testing'
                 bat 'pytest test_person.py' 
