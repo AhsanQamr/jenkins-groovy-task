@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     
-                    git url: 'https://github.com/Sourav-Malani/Jenkins-Scripting.git', branch: 'main'
+                    git url: 'https://github.com/Sourav-Malani/Jenkins-Scripting.git', branch: 'main' 
                 }
             }
         }
