@@ -10,8 +10,8 @@ class Person:
 
 # Usage
 if __name__ == "__main__":
-    person1 = Person("John", 15)
-    person2 = Person("Eva", 16)
+    person1 = Person("Alice", 25)
+    person2 = Person("Bob", 16)
 
     print(f"{person1.name} is a teenager: {person1.is_teenager()}")
     print(f"{person2.name} is a teenager: {person2.is_teenager()}")
