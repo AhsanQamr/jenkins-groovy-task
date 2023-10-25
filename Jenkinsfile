@@ -12,7 +12,7 @@ pipeline {
         stage('Building...') {
             steps {
                 echo 'Building'
-                bat 'pip install -r requirements.txt'
+                bat 'C:\\Users\\HRH\\AppData\\Local\\Programs\\Python\\Python310\\pip install -r requirements.txt'
             }
         }
         stage('Testing...') {
