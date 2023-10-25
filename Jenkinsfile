@@ -4,7 +4,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    git url: 'https://github.com/Sourav-Malani/Jenkins-Scripting.git', branch: 'main' 
+                    git url: 'https://github.com/AhsanQamr/jenkins-groovy-task.git', branch: 'main' 
                 }
             }
         }
