@@ -2,7 +2,6 @@
 # It includes dependencies required for linting and testing.
 
 # flake8 for linting
-flake8==4.0.1
 
 # for testing purpose
 pytest==6.2.5
